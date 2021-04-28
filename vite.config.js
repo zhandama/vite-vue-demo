@@ -1,5 +1,6 @@
 const path = require('path')
-export default function () {
+import { viteExt } from 'apite'
+export default ()=> {
     return {
         // 代理，最重要，其他的都可以有默认配置
         proxy: {
@@ -20,6 +21,6 @@ export default function () {
         silent: false,
         // 哪个第三方的包需要重新编译
         optimizeDeps:[],
-
+        configureServer: [ viteExt({ /**ExtConfig*/ }) ]
     }
 }
