@@ -21,7 +21,7 @@ export default {
       console.log(res.data)
     })
     // this.$toast('提示内容');
-    this.$axios.get("/api/json").then(res=>{
+    this.$axios.get("/api/list").then(res=>{
       console.log(res.data)
     })
   }
