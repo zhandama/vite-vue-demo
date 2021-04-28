@@ -6,7 +6,9 @@
 </template>
 
 <script>
+// import qustions from "@components/qustions"
 export default {
+
   name: 'home',
   data() {
     return {
@@ -15,8 +17,10 @@ export default {
       countDown:''
     }
   },
+  components: {
+    // qustions
+  },
   mounted(){
-    console.log('mounted')
     this.countDown = setInterval(() => {
       if (this.count<100) {
         this.count = this.count + 1
@@ -24,6 +28,9 @@ export default {
         clearInterval(this.countDown)
       }
     }, 50);
+  },
+  methods:{
+    
   }
 }
 </script>
