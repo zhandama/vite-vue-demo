@@ -1,5 +1,6 @@
 <template>
   123123
+  <van-circle v-model="count" :rate="5" :speed="100" text="倒计时" layer-color="#ebedf0" stroke-width='80' size="60px" />
 </template>
 
 <script>
@@ -10,17 +11,17 @@ export default {
   },
   data() {
     return {
-      count: 0
+      count: 5
     }
   },
   mounted(){
     var url = "/app/gethotel"
     var data = {"page":"3","limit":"4","type":"","num":"","hot":"","keyWords":"","area_id":"","season":"","months":""}
-    this.$http.post(url, data).then(res=>{
+    this.$axios.post(url, data).then(res=>{
       console.log(res)
     })
     // this.$toast('提示内容');
-    this.$http.get("/api/json").then(res=>{
+    this.$axios.get("/api/json").then(res=>{
       console.log(res)
     })
   }

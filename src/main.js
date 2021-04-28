@@ -9,7 +9,7 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 
 const app = createApp(App)
-app.config.globalProperties.$http=axios
+app.config.globalProperties.$axios=axios
 app.use(router)
 app.use(Vant);
 app.mount('#app')
