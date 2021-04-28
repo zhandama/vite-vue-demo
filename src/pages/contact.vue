@@ -18,11 +18,11 @@ export default {
     var url = "/app/gethotel"
     var data = {"page":"3","limit":"4","type":"","num":"","hot":"","keyWords":"","area_id":"","season":"","months":""}
     this.$axios.post(url, data).then(res=>{
-      console.log(res)
+      console.log(res.data)
     })
     // this.$toast('提示内容');
     this.$axios.get("/api/json").then(res=>{
-      console.log(res)
+      console.log(res.data)
     })
   }
 }

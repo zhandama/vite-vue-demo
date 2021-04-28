@@ -23,7 +23,7 @@ export default {
       } else {
         clearInterval(this.countDown)
       }
-    }, 100);
+    }, 50);
   }
 }
 </script>
