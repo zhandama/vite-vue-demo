@@ -16,12 +16,7 @@ export default {
     }
   },
   mounted(){
-    var url = "/app/gethotel"
-    var data = {"page":"3","limit":"4","type":"","num":"","hot":"","keyWords":"","area_id":"","season":"","months":""}
-    this.$http.post(url, data).then(res=>{
-      console.log(res)
-    })
-    this.$toast('提示内容');
+    console.log(1)
   }
 }
 </script>

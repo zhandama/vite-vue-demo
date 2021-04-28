@@ -1,7 +1,7 @@
 const { api, delay, mock, resp } = require('apite')
 
 // JSON
-api.get('/json', {  msg: 'json'})
+api.get('/json', { code:'00', msg: 'json'})
 
 // POST
 api.post('/post', ctx=> {  
