@@ -1,20 +1,52 @@
 <template>
-  <h1>{{ msg }}</h1>
-  <button @click="count++">count is: {{ count }}</button>
-  <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
-  <van-circle v-model:current-rate="count" :rate="10" :speed="100" text="倒计时" layer-color="#ebedf0" stroke-width='80' size="60px" />
+  <div>
+    <van-sticky>
+      <div class="top-search">
+        <div class="logo"><img src="/@/assets/images/logo.png" /></div>
+        <div class="search"><van-search v-model="keyWords" placeholder="搜索内容" ref="keyWords" shape="round" background="#0074FF"/></div>
+      </div>
+    <van-tabs>
+      <van-tab v-for="(item,index) in topMenu" :title="item.name" :key="index">
+      </van-tab>
+    </van-tabs>
+    </van-sticky>
+    <van-pull-refresh v-model="state.refreshing" @refresh="onRefresh">
+      <van-list
+        v-model:loading="state.loading"
+        :finished="state.finished"
+        finished-text="没有更多了"
+        @load="onLoad"
+      >
+        <div v-for="item in state.list" :key="item">
+          {{item}}
+        </div>
+      </van-list>
+    </van-pull-refresh>
+  </div>
 </template>
-
 <script>
-// import qustions from "@components/qustions"
 export default {
-
-  name: 'home',
+  name: 'Home',
   data() {
     return {
-      msg:'123',
-      count: 20,
-      countDown:''
+      topMenu:[
+        {name:'推荐'},
+        {name:'最新'},
+        {name:'科技'},
+        {name:'顾问'},
+        {name:'滴滴'},
+        {name:'是的'},
+        {name:'大的'},
+        {name:'最后'},
+        {name:'一个'}
+      ],
+      active:0,
+      state:{
+        list: [],
+        loading: false,
+        finished: false,
+        refreshing: false,
+      }
     }
   },
   components: {
@@ -30,7 +62,32 @@ export default {
     }, 50);
   },
   methods:{
-    
+    onLoad() {
+      // 异步更新数据
+      // setTimeout 仅做示例，真实场景中一般为 ajax 请求
+      setTimeout(() => {
+        for (let i = 0; i < 10; i++) {
+          this.state.list.push(this.state.list.length + 1);
+        }
+
+        // 加载状态结束
+        this.state.loading = false;
+
+        // 数据全部加载完成
+        if (this.state.list.length >= 40) {
+          this.state.finished = true;
+        }
+      }, 1000);
+    },
+    onRefresh(){
+      // 清空列表数据
+      this.state.finished = false;
+
+      // 重新加载数据
+      // 将 loading 设置为 true，表示处于加载状态
+      this.state.loading = true;
+      this.onLoad();
+    }
   }
 }
 </script>

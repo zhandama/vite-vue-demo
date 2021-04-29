@@ -1,4 +1,11 @@
 <template>
+  <van-nav-bar
+    :title="title"
+    left-text="返回"
+    left-arrow
+    @click-left="onClickLeft"
+    v-if="hidetopbar"
+  />
   <router-view />
   <Footer />
 </template>
@@ -9,12 +16,18 @@ export default {
   name: 'App',
   data() {
     return {
-      active: 0,
-      showTabbar:true
+      title: 0,
+      hidetopbar:true
     }
   },
   components: {
     Footer
-  }
+  },
+  watch: {
+    $route(){
+      this.$route.meta.hidetopbar ? this.hidetopbar = false:this.hidetopbar = true
+      this.title = this.$route.meta.title
+    },
+  },
 }
 </script>

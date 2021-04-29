@@ -1,14 +1,39 @@
 <template>
   <van-tabbar v-if="showTabbar" route v-model="active">
-    <van-tabbar-item replace to="/" >
-    <span>自定义</span>
+    <van-tabbar-item replace to="/kejian" >
+    <span>课件</span>
       <template #icon="props">
-        <img :src="props.active ? icon.active : icon.inactive" />
+        <img :src="props.active ? icon1.active : icon1.inactive" />
       </template>
     </van-tabbar-item>
-    <van-tabbar-item replace to="/contact" icon="search">标签</van-tabbar-item>
-    <van-tabbar-item icon="friends-o">我的</van-tabbar-item>
-    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+
+    <van-tabbar-item replace to="/wenjuan" >
+    <span>问卷</span>
+      <template #icon="props">
+        <img :src="props.active ? icon2.active : icon2.inactive" />
+      </template>
+    </van-tabbar-item>
+
+    <van-tabbar-item replace to="/" >
+    <!-- <span>学习</span> -->
+      <template #icon="props">
+        <img :src="props.active ? icon3.active : icon3.inactive" style="height:36px"/>
+      </template>
+    </van-tabbar-item>
+
+    <van-tabbar-item replace to="/dati" >
+    <span>答题</span>
+      <template #icon="props">
+        <img :src="props.active ? icon4.active : icon4.inactive" />
+      </template>
+    </van-tabbar-item>
+
+    <van-tabbar-item replace to="/my" >
+    <span>我的</span>
+      <template #icon="props">
+        <img :src="props.active ? icon5.active : icon5.inactive" />
+      </template>
+    </van-tabbar-item>
   </van-tabbar>
 </template>
 
@@ -22,9 +47,25 @@ export default {
     return {
       showTabbar:true,
       active:0,
-      icon:{
+      icon1:{
         active: '/@/assets/images/tab_ke1.png',
         inactive: '/@/assets/images/tab_ke.png',
+      },
+      icon2:{
+        active: '/@/assets/images/tab_wen1.png',
+        inactive: '/@/assets/images/tab_wen.png',
+      },
+      icon3:{
+        active: '/@/assets/images/tab_xuexi1.png',
+        inactive: '/@/assets/images/tab_xuexi.png',
+      },
+      icon4:{
+        active: '/@/assets/images/tab_dati1.png',
+        inactive: '/@/assets/images/tab_dati.png',
+      },
+      icon5:{
+        active: '/@/assets/images/tab_my1.png',
+        inactive: '/@/assets/images/tab_my.png',
       }
     }
   },
