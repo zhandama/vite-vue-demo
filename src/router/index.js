@@ -17,7 +17,7 @@ const router = createRouter({
       {
         path: '/my',
         component: My,
-        meta: { title:'我的'}
+        meta: { title:'个人中心'}
       },
       {
         path: '/test',
