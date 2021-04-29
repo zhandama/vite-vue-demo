@@ -11,7 +11,7 @@ export default ()=> {
             }
         },
         alias : {
-            '/@/':  path.resolve(__dirname, './src')
+            '/@/':  path.resolve(__dirname, './src'),
         },
         // 端口
         port: 3000,
