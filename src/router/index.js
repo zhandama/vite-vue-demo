@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import Class from '../pages/Class.vue'
+import ClassDetail from '../pages/ClassDetail.vue'
+
 import My from '../pages/my/My.vue'
 import AddMyInfo from '../pages/my/AddMyInfo.vue'
 
@@ -20,6 +22,11 @@ const router = createRouter({
         path: '/class',
         component: Class,
         meta: { hidetopbar: true, title:'课件'}
+      },
+      {
+        path: '/classdetail',
+        component: ClassDetail,
+        meta: { hidefooter:true, title:'课件详情'}
       },
       {
         path: '/my',

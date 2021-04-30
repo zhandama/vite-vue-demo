@@ -69,6 +69,10 @@ export default {
       // 异步更新数据
       // setTimeout 仅做示例，真实场景中一般为 ajax 请求
       setTimeout(() => {
+        if (this.state.refreshing) {
+          this.state.list = [];
+          this.state.refreshing = false;
+        }
         for (let i = 0; i < 10; i++) {
           this.state.list.push(this.state.list.length + 1);
         }

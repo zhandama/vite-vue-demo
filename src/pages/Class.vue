@@ -17,8 +17,12 @@
         finished-text="没有更多了"
         @load="onLoad"
       >
-        <div v-for="item in state.list" :key="item">
-          
+        <div v-for="item in state.list" :key="item" class="item" @click="goDetail(item)">
+          <div class="item-img"><img src="/@/assets/images/ppt.png" /></div>
+          <div class="item-cont">
+            <div class="item-title">全科阅读B-2003.ppt</div>
+            <div class="item-tips">9.0MB·范丽平 2019/8/30 12:09创建</div>
+          </div>
           <!-- {{item}} -->
         </div>
         
@@ -65,10 +69,17 @@ export default {
     }, 50);
   },
   methods:{
+    goDetail(){
+      this.$router.push({path: '/classdetail',query:{url:''}})
+    },
     onLoad() {
       // 异步更新数据
       // setTimeout 仅做示例，真实场景中一般为 ajax 请求
       setTimeout(() => {
+        if (this.state.refreshing) {
+          this.state.list = [];
+          this.state.refreshing = false;
+        }
         for (let i = 0; i < 10; i++) {
           this.state.list.push(this.state.list.length + 1);
         }
@@ -94,3 +105,29 @@ export default {
   }
 }
 </script>
+<style lang="less">
+.item{
+  background: #fff;
+  padding:5vw;
+  display: flex;
+  .item-img{
+    width: 10vw;
+    margin-right:5vw;
+    img {
+      width: 100%;
+    }
+  }
+  .item-cont{
+    text-align: left;
+    width: 100%;
+    .item-title {
+      font-weight:bold;
+      line-height: 6.5vw;
+    }
+    .item-tips {
+      color:#999;
+      font-size:12px
+    }
+  }
+}
+</style>
