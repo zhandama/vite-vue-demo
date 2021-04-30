@@ -10,9 +10,9 @@
       </div>
       <van-cell class="my-score" center is-link to="" >
         <template #title>
-        <span class="my-score-f">{{info.score}}</span>
-        <span class="my-score-n">积分</span>
-      </template>
+          <span class="my-score-f">{{info.score}}</span>
+          <span class="my-score-n">积分</span>
+        </template>
       </van-cell>
     </div>
     <van-cell icon="/@/assets/images/user_collect.png" title="我的收藏" is-link to="" />

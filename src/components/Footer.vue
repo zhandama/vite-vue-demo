@@ -1,6 +1,6 @@
 <template>
   <van-tabbar v-if="showTabbar" route v-model="active">
-    <van-tabbar-item replace to="/kejian" >
+    <van-tabbar-item replace to="/class" >
     <span>课件</span>
       <template #icon="props">
         <img :src="props.active ? icon1.active : icon1.inactive" />

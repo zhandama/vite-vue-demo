@@ -6,7 +6,7 @@
         <div class="search"><van-search v-model="keyWords" placeholder="搜索内容" ref="keyWords" shape="round" background="#0074FF"/></div>
       </div>
     <van-tabs>
-      <van-tab v-for="(item,index) in topMenu" :title="item.name" :key="index">
+      <van-tab v-for="(item,index) in topMenu" :title="item.name+index" :key="index">
       </van-tab>
     </van-tabs>
     </van-sticky>
@@ -33,15 +33,15 @@ export default {
     return {
       keyWords:'',
       topMenu:[
-        {name:'推荐'},
-        {name:'最新'},
-        {name:'科技'},
-        {name:'顾问'},
-        {name:'滴滴'},
-        {name:'是的'},
-        {name:'大的'},
-        {name:'最后'},
-        {name:'一个'}
+        {name:'课件'},
+        {name:'课件'},
+        {name:'课件'},
+        {name:'课件'},
+        {name:'课件'},
+        {name:'课件'},
+        {name:'课件'},
+        {name:'课件'},
+        {name:'课件'}
       ],
       active:0,
       state:{
