@@ -6,7 +6,7 @@
           <img src="/@/assets/images/no-head.png" />
         </div>
         <div class="my-nickName">施小国</div>
-        <div class="my-tips"><span>个人中心</span><van-icon name="arrow" size="16"/></div>
+        <router-link class="my-tips" :to="{path:'/addmyinfo'}"><span>个人中心</span><van-icon name="arrow" size="16"/></router-link>
       </div>
       <van-cell class="my-score" center is-link to="" >
         <template #title>
@@ -74,6 +74,7 @@ export default {
   background: #1F84FF;
   border: 1px solid #5FA7FF;
   border-radius: 32px 0 0 32px;
+  color:#fff;
   .van-icon{
     position: relative;
     top:3px

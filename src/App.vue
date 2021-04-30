@@ -7,7 +7,7 @@
     v-if="hidetopbar"
   />
   <router-view />
-  <Footer />
+  <Footer v-if="hidefooter"/>
 </template>
 
 <script>
@@ -19,7 +19,8 @@ export default {
       title: '',
       hidetopbar:true,
       leftText:'',
-      leftArrow:true
+      leftArrow:true,
+      hidefooter:true
     }
   },
   components: {
@@ -29,12 +30,13 @@ export default {
     $route(){
       this.$route.meta.hidetopbar ? this.hidetopbar = false:this.hidetopbar = true
       this.$route.meta.leftArrow ? this.leftArrow = false:this.leftArrow = true
+      this.$route.meta.hidefooter ? this.hidefooter = false:this.hidefooter = true
       this.title = this.$route.meta.title
     },
   },
   methods:{
     onClickLeft(){
-      console.log('点击了返回')
+      this.$router.go(-1)
     }
   }
 }
