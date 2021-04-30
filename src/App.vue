@@ -16,7 +16,7 @@ export default {
   name: 'App',
   data() {
     return {
-      title: 0,
+      title: '',
       hidetopbar:true,
       leftText:'',
       leftArrow:true
@@ -34,7 +34,7 @@ export default {
   },
   methods:{
     onClickLeft(){
-      console.log(1)
+      console.log('点击了返回')
     }
   }
 }

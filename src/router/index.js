@@ -21,7 +21,8 @@ const router = createRouter({
       },
       {
         path: '/test',
-        component: test
+        component: test,
+        meta: { title:'测试页面'}
       }
     ]
 })

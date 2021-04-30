@@ -8,17 +8,17 @@
         <div class="my-nickName">施小国</div>
         <div class="my-tips"><span>个人中心</span><van-icon name="arrow" size="16"/></div>
       </div>
-      <van-cell class="my-score" center is-link to="index" >
+      <van-cell class="my-score" center is-link to="" >
         <template #title>
         <span class="my-score-f">{{info.score}}</span>
         <span class="my-score-n">积分</span>
       </template>
       </van-cell>
     </div>
-    <van-cell icon="/@/assets/images/user_collect.png" title="我的收藏" is-link to="index" />
-    <van-cell icon="/@/assets/images/user_wenjuan.png" title="我的问卷" is-link to="index" />
-    <van-cell icon="/@/assets/images/user_history.png" title="我的历史" is-link to="index" />
-    <van-cell icon="/@/assets/images/user_children.png" title="子女信息管理" is-link to="index" value=""/>
+    <van-cell icon="/@/assets/images/user_collect.png" title="我的收藏" is-link to="" />
+    <van-cell icon="/@/assets/images/user_wenjuan.png" title="我的问卷" is-link to="" />
+    <van-cell icon="/@/assets/images/user_history.png" title="我的历史" is-link to="" />
+    <van-cell icon="/@/assets/images/user_children.png" title="子女信息管理" is-link to="" value=""/>
   </div>
 </template>
 
@@ -44,6 +44,7 @@ export default {
   height: 46vw;
   color:#fff;
   padding-top: 15vw;
+  position: relative;
 }
 .my-info{
   display: flex;
@@ -64,10 +65,10 @@ export default {
   font-size: 6vw;
 }
 .my-tips{
-  position: fixed;
+  position: absolute;
   right:0;
-  top:30vw;
-  width: 30vw;
+  top:18vw;
+  width: 26vw;
   height: 8vw;
   line-height: 8vw;
   background: #1F84FF;

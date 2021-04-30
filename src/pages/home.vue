@@ -10,7 +10,7 @@
       </van-tab>
     </van-tabs>
     </van-sticky>
-    <van-pull-refresh v-model="state.refreshing" @refresh="onRefresh">
+    <!-- <van-pull-refresh v-model="state.refreshing" @refresh="onRefresh">
       <van-list
         v-model:loading="state.loading"
         :finished="state.finished"
@@ -21,7 +21,7 @@
           {{item}}
         </div>
       </van-list>
-    </van-pull-refresh>
+    </van-pull-refresh> -->
   </div>
 </template>
 <script>
@@ -29,6 +29,7 @@ export default {
   name: 'Home',
   data() {
     return {
+      keyWords:'',
       topMenu:[
         {name:'推荐'},
         {name:'最新'},
