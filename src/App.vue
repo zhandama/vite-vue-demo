@@ -1,8 +1,8 @@
 <template>
   <van-nav-bar
     :title="title"
-    left-text="返回"
-    left-arrow
+    :left-text="leftText"
+    :left-arrow="leftArrow"
     @click-left="onClickLeft"
     v-if="hidetopbar"
   />
@@ -17,7 +17,9 @@ export default {
   data() {
     return {
       title: 0,
-      hidetopbar:true
+      hidetopbar:true,
+      leftText:'',
+      leftArrow:true
     }
   },
   components: {
@@ -26,8 +28,14 @@ export default {
   watch: {
     $route(){
       this.$route.meta.hidetopbar ? this.hidetopbar = false:this.hidetopbar = true
+      this.$route.meta.leftArrow ? this.leftArrow = false:this.leftArrow = true
       this.title = this.$route.meta.title
     },
   },
+  methods:{
+    onClickLeft(){
+      console.log(1)
+    }
+  }
 }
 </script>
