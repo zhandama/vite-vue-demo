@@ -7,7 +7,7 @@
       </template>
     </van-tabbar-item>
 
-    <van-tabbar-item replace to="/wenjuan" >
+    <van-tabbar-item replace to="/question" >
     <span>问卷</span>
       <template #icon="props">
         <img :src="props.active ? icon2.active : icon2.inactive" />
@@ -21,7 +21,7 @@
       </template>
     </van-tabbar-item>
 
-    <van-tabbar-item replace to="/dati" >
+    <van-tabbar-item replace to="/exam" >
     <span>答题</span>
       <template #icon="props">
         <img :src="props.active ? icon4.active : icon4.inactive" />

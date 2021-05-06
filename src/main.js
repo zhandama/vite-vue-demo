@@ -3,9 +3,10 @@ import App from './App.vue'
 import './index.css'
 import './style.less'
 import router from './router'
-import axios from 'axios';
-axios.defaults.withCredentials = false; // 跨域设置，false忽略跨域cookies（Access-Control-Allow-Headers:*）
-axios.defaults.timeout = 10000; // 等待时间，ms
+// import axios from 'axios';
+import axios from './http.js';
+// axios.defaults.withCredentials = false; // 跨域设置，false忽略跨域cookies（Access-Control-Allow-Headers:*）
+// axios.defaults.timeout = 10000; // 等待时间，ms
 import Vant from 'vant';
 import 'vant/lib/index.css';
 

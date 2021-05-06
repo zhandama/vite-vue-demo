@@ -6,19 +6,19 @@
           <img src="/@/assets/images/no-head.png" />
         </div>
         <div class="my-nickName">施小国</div>
-        <router-link class="my-tips" :to="{path:'/addmyinfo'}"><span>个人中心</span><van-icon name="arrow" size="16"/></router-link>
+        <router-link class="my-tips" :to="{path:'/myinfo'}"><span>个人中心</span><van-icon name="arrow" size="16"/></router-link>
       </div>
-      <van-cell class="my-score" center is-link to="" >
+      <van-cell class="my-score" center is-link to="/score" >
         <template #title>
           <span class="my-score-f">{{info.score}}</span>
           <span class="my-score-n">积分</span>
         </template>
       </van-cell>
     </div>
-    <van-cell icon="/@/assets/images/user_collect.png" title="我的收藏" is-link to="" />
-    <van-cell icon="/@/assets/images/user_wenjuan.png" title="我的问卷" is-link to="" />
-    <van-cell icon="/@/assets/images/user_history.png" title="我的历史" is-link to="" />
-    <van-cell icon="/@/assets/images/user_children.png" title="子女信息管理" is-link to="" value=""/>
+    <van-cell icon="/@/assets/images/user_collect.png" title="我的收藏" is-link to="/mycollect" />
+    <van-cell icon="/@/assets/images/user_wenjuan.png" title="我的问卷" is-link to="/myquestion" />
+    <van-cell icon="/@/assets/images/user_history.png" title="我的历史" is-link to="/myhistory" />
+    <van-cell icon="/@/assets/images/user_children.png" title="子女信息管理" is-link to="/mychildren"/>
   </div>
 </template>
 
@@ -39,9 +39,9 @@ export default {
 </script>
 <style lang="less">
 .my-title{
-  background: url("/@/assets/images/bg.png") top no-repeat;
+  background: url("../../assets/images/bg.png") top no-repeat;
   background-size: 100%;
-  height: 46vw;
+  height: 45vw;
   color:#fff;
   padding-top: 15vw;
   position: relative;
@@ -83,8 +83,8 @@ export default {
 .my-score{
   width: 92vw !important;
   margin: 8vw auto;
-  height: 15vw;
-  line-height: 15vw;
+  height: 14vw;
+  line-height: 14vw;
   background: #FFFFFF;
   border-radius: 10px;
   .my-score-f{
